@@ -1,0 +1,15 @@
+Software Required:
+
+Virtual Box
+Git
+R
+R Studio
+JDK
+XCode Developer Tools (Mac)
+TextWrangle/Notepad++
+Protege
+OpenRefine
+Gephi
+
+
+
