@@ -1,0 +1,1247 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://vocab.ox.ac.uk/balladspec#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:oa="http://www.w3.org/ns/oa#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ns="http://www.w3.org/2006/vcard/ns#"
+  xml:base="http://vocab.ox.ac.uk/balladspec">
+  <owl:Ontology rdf:about="">
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This vocabulary describes printed broadside ballads. It relates the content-elements of printed ballads (such as verses, tunes, and illustrations) to responsible agents (such as authors, printers and publishers) through events (such as publication and performance). Broadside sheets in library and digital collections can be associated with copies of the same or related editions through a FRBR-like structure.  &#xD;
+ &#xD;
+An outcome of the Integrating Broadside Ballads Archives project funded by JISC, it was created at the Bodleian Libraries at the University of Oxford.&#xD;
+</dc:description>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mike Heaney</dc:creator>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tanya Gray</dc:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.9.201304</owl:versionInfo>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Giles Bergel</dc:creator>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Neil Jefferies</dc:creator>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mike Bennett</dc:creator>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >balladspec: an RDF vocabulary for broadside ballads</dc:title>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alexandra Franklin</dc:creator>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SheetManifestationCreationEvent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The creation event would be when the type was set. It may then be printed off at intervals until the forme is taken apart again. There may be one or two things which happen to let you trace this process, for example a letter falling out or getting damaged. (Defined by Mike Heaney, 25/4/2013, http://www.linkedin.com/pub/mike-heaney/3a/876/b46)
+</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet manifestation creation event</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ImprintElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imprint element</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Manifestation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EntranceStationersRegister">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Entrance in the Stationer's Register event</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Work">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A distinct intellectual or artistic creation.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Work</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agent</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >example would be organization or person</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="TuneNameElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tune name element</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manifestation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PartOfCollectionEvent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Event record of when sheet item existed in a collection</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Part of collection event</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PerformanceElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Element on sheet describing performance</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance element</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manifestation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Manifestation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Expression"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Item"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetItemFacsimile">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The catalogued facsimile of a material ballad sheet; prompted by existence of photographic facsimlies.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item facsimile</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Item"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetItemImage">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Digital image of sheet item</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Item"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IllustrationElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >element that consists of an illustration manifestation</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Illustration element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IllustrationWork">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The illustration work is the composition or distinct version of a visual subject.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Illustration work</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Measurement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Measurement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BalladTextManifestation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ballad text manifestation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CollectionCreationEvent">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Event describing the creation of a collection</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Address">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Address</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Address of agent or event or collection</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetItemAggregation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >volume containing more than one sheet item</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item aggregation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TitleElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ProseElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Prose on a sheet manifestation that is not part of a ballad manifestation</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Prose Element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Collection">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Collection containing sheet item(s)</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Collection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetManifestation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation of a ballad sheet</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet manifestation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SeriesElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Publisher's series name and/or number as printed.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Series number element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetItemPrintingEvent">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Printing event for a ballad sheet</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LicenseStatementElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >License statement element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CollectionDispersalEvent">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dispersal event for a collection</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Event"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#CollectionCreationEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AuthorNameElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >element that consists of author name manifestation</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Author name element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TuneWork">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tune work</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DateElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >element containing date manifestation</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Date element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BalladTextWork">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ballad as a distinct artistic creation realized as a song lyric, independently of a tune.  </rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ballad as song lyric</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TextBodyElement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text body element</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text body element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OrnamentElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ornament element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Item">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A single exemplar of a manifestation.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Item</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="#Manifestation"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Expression"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MusicalScoreElement">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Musical score element</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Manifestation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Expression">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The realization of a work</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="#Manifestation"/>
+    <owl:disjointWith rdf:resource="#Item"/>
+    <owl:disjointWith rdf:resource="#Work"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PerformanceEvent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >performance event</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SheetItem">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A single ballad sheet exemplar of a ballad sheet manifestation. A printing of a sheet manifestation </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Item"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasAnnotation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Annotation that is the product of research concerning any part of the data. </rdfs:comment>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#SheetItemAggregation"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:domain rdf:resource="#IllustrationWork"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has annotation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCreator">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agent with role of creator</rdfs:comment>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has creator</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSheetManifestationParticipant">
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sheet manifestation participant in event</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEnterer">
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Enterer</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="embodimentOf">
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Embodiment of</rdfs:label>
+    <rdfs:range rdf:resource="#TuneWork"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="wasDerivedFrom">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Description of a sheet manifestation creation event was derived from a specified imprint element</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Was derived from</rdfs:label>
+    <rdfs:range rdf:resource="#ImprintElement"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/#wasDerivedFrom"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasParticipant">
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has participant</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Agent involved in event</rdfs:comment>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSheetItemParticipant">
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item participant in collection event</rdfs:comment>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item participant in event</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItem"/>
+    <rdfs:range rdf:resource="#SheetItemFacsimile"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="workEntered">
+    <rdfs:domain rdf:resource="#BalladTextWork"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Work entered in Stationer's Register</rdfs:label>
+    <rdfs:range rdf:resource="#EntranceStationersRegister"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMusicalScore">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >musical score of the ballad</rdfs:comment>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Musical score</rdfs:label>
+    <rdfs:range rdf:resource="#MusicalScoreElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="partOfCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >links sheet item to a collection</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Part of collection</rdfs:label>
+    <rdfs:range rdf:resource="#PartOfCollectionEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSheetItem">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >collection has specified sheet item</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemAggregation"/>
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has sheet item</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLicenser">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The licenser of the press</rdfs:comment>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Licenser</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDerivativeOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation is derivative of another manifestation of the same class</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Is derivative of</rdfs:label>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#Manifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:range rdf:resource="#Manifestation"/>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="formsPartOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >relating sheet item to collection or sheet item aggregation</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Forms part of </rdfs:label>
+    <rdfs:range rdf:resource="#Collection"/>
+    <rdfs:range rdf:resource="#SheetItemAggregation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="follows">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Follows</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >one manifestation follows another manifestation of the same class</rdfs:comment>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#Manifestation"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:range rdf:resource="#Manifestation"/>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has facsimile of sheet item</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has image</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItemFacsimile"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="illustrationPrinted">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >printing of a illustration manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Illustration printed</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItemPrintingEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="collectionCreated">
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >creation of a collection</rdfs:label>
+    <rdfs:range rdf:resource="#CollectionCreationEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="collectionDispersed">
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dispersal of a collection</rdfs:label>
+    <rdfs:range rdf:resource="#CollectionDispersalEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAddress">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >street address</rdfs:comment>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:range rdf:resource="#Address"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2006/vcard/ns#street-address"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has address</rdfs:label>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="precedes">
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation precedes another manifestation of same class</rdfs:comment>
+    <rdfs:range rdf:resource="#Manifestation"/>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#Manifestation"/>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Precedes</rdfs:label>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTuneAuthor">
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tune author</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDifferentFrom">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is different from another illustration manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Is different from</rdfs:label>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >collection that a sheet item is added to</rdfs:comment>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:range rdf:resource="#Collection"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Collection</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="exemplar">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A manifestation exemplified in an item</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateElement"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:range rdf:resource="#Item"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Exemplar</rdfs:label>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:domain rdf:resource="#Manifestation"/>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:range rdf:resource="#SheetItem"/>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="formsPartOfSheetManifestation">
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Forms part of sheet manifestation</rdfs:label>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#ProseElement"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#SeriesElement"/>
+    <rdfs:domain rdf:resource="#DateElement"/>
+    <rdfs:domain rdf:resource="#PerformanceElement"/>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sheetManifestationComposedOf">
+    <rdfs:range rdf:resource="#ProseElement"/>
+    <rdfs:range rdf:resource="#TextBodyElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation that is part of a ballad sheet manifestation</rdfs:comment>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+    <rdfs:range rdf:resource="#TuneNameElement"/>
+    <rdfs:range rdf:resource="#DateElement"/>
+    <rdfs:range rdf:resource="#PerformanceElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet manifestation composed of</rdfs:label>
+    <rdfs:range rdf:resource="#AuthorNameElement"/>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:range rdf:resource="#TitleElement"/>
+    <rdfs:range rdf:resource="#ImprintElement"/>
+    <rdfs:range rdf:resource="#MusicalScoreElement"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#SeriesElement"/>
+    <rdfs:range rdf:resource="#LicenseStatementElement"/>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPerformer">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Person / organization record for the performer of a sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performer</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sheetManifestationCreated">
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet manifestation created</rdfs:label>
+    <rdfs:range rdf:resource="#SheetManifestationCreationEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="balladTextComposedOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is composed of</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:range rdf:resource="#TextBodyElement"/>
+    <rdfs:range rdf:resource="#AuthorNameElement"/>
+    <rdfs:range rdf:resource="#MusicalScoreElement"/>
+    <rdfs:range rdf:resource="#TuneNameElement"/>
+    <rdfs:range rdf:resource="#TitleElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPrinter">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Printer of the sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has printer</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relatedTo">
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Related to</rdfs:label>
+    <rdfs:range rdf:resource="#Manifestation"/>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#Manifestation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >manifestation related to another manifestation of the same class</rdfs:comment>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLocation">
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:range rdf:resource="#Address"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Location of event, or agent e.g. Organization, Person</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has location</rdfs:label>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sameEditionAs">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Same edition as manifestation of the same class</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Same edition as</rdfs:label>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="exemplarOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Examplar of</rdfs:comment>
+    <rdfs:domain rdf:resource="#Item"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#Manifestation"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/vocab/frbr/core#exemplarOf"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Exemplar of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sheetItemCreated">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creation of a sheet item by printing</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet item created</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItemPrintingEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="formsPartOfBalladText">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Forms part of ballad text manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Forms part of ballad text</rdfs:label>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAuthor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >author of ballad text manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has author</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOwner">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >owner of a collection</rdfs:comment>
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Owner</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="referredToBy">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >organisation or person who refers to a sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Referred to by</rdfs:label>
+    <rdfs:range rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPerformance">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >performance of a sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextWork"/>
+    <rdfs:domain rdf:resource="#PerformanceElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance</rdfs:label>
+    <rdfs:range rdf:resource="#PerformanceEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isFacsimileOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Is facsimile of specified sheet item</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Is facsimile of</rdfs:label>
+    <rdfs:range rdf:resource="#SheetItem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="incorporatesIllustration">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >an illustration manifestation incorporates another illustration manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Incorporates illustration</rdfs:label>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMeasurement">
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:domain rdf:resource="#ProseElement"/>
+    <rdfs:domain rdf:resource="#SheetItemImage"/>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has measurement</rdfs:label>
+    <rdfs:domain rdf:resource="#DateElement"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#PerformanceElement"/>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SeriesElement"/>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >describes measurement relating to element e.g. dimension</rdfs:comment>
+    <rdfs:range rdf:resource="#Measurement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasArtist">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >comment by cataloguer on the illustration identifying the artist, the person responsible for the illustration work</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has artist</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sameAs">
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestation same as manifestation of same class</rdfs:comment>
+    <rdfs:range rdf:resource="#SheetManifestation"/>
+    <rdfs:range rdf:resource="#IllustrationElement"/>
+    <rdfs:range rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Same as</rdfs:label>
+    <rdfs:range rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="format">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Format of the sheet e.g. single sheet, half sheet</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has format</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="alternativeTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alternative title</rdfs:comment>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="standardizedTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cataloguer assigned standardized title for work</rdfs:comment>
+    <rdfs:domain rdf:resource="#TuneWork"/>
+    <rdfs:domain rdf:resource="#BalladTextWork"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Standardized title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="normalizedAlternativeTitle">
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Normalized alternative title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="typeface">
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Typeface</rdfs:label>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >typeface of the subject</rdfs:comment>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="firstLine">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >First line of the verse</rdfs:comment>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >First line of verse</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="recordURL">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >link to a separate catalogue record</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Record URL</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="prose">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A preamble to the text, not forming part of the lyric</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProseElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Prose</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subject">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The subject of the ballad</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Subject</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="title">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title of ballad manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="illustrationText">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text contained within the illustration (speech bubbles etc.)</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Illustration text</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="identifier">
+    <rdfs:domain rdf:resource="#DateElement"/>
+    <rdfs:domain rdf:resource="#SeriesElement"/>
+    <rdfs:domain rdf:resource="#TuneWork"/>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:domain rdf:resource="#ProseElement"/>
+    <rdfs:domain rdf:resource="#PerformanceElement"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#SheetItemAggregation"/>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#SheetItemImage"/>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Local identifier</rdfs:label>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <rdfs:domain rdf:resource="#IllustrationWork"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+    <rdfs:domain rdf:resource="#BalladTextWork"/>
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An unambiguous identifier for the resource</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ornamentationStyle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Style of ornamentation</rdfs:comment>
+    <rdfs:domain rdf:resource="#OrnamentElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ornamentation style</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="verse">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A verse of the lyric</rdfs:comment>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Verse</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="tuneName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Name of tune as transcribed on sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#TuneNameElement"/>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Name of tune</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="cataloguingNotes">
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cataloguing notes</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="condition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >physical state of the sheet</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Condition</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="sheetItemImageURL">
+    <rdfs:domain rdf:resource="#SheetItemImage"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >URL to sheet item image</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="manuscriptAdditions">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Description of and transcription of any manuscript additions on the sheet item e.g. location, identification if possible and the content</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Has manuscript additions</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="reference">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >standard identifier from secondary works or databases, dependent on subject</rdfs:comment>
+    <rdfs:domain rdf:resource="#IllustrationWork"/>
+    <rdfs:domain rdf:resource="#IllustrationElement"/>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#BalladTextWork"/>
+    <rdfs:domain rdf:resource="#TuneWork"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Standard identifier </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="authorName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Normalized name of author</rdfs:comment>
+    <rdfs:domain rdf:resource="#AuthorNameElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Name of author</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="normalizedReferredTitle">
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Normalized referred title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="normalizedTitle">
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Normalized title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="referredTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >referred title</rdfs:comment>
+    <rdfs:domain rdf:resource="#TitleElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Referred title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="imprint">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imprint as given on the sheet</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:domain rdf:resource="#ImprintElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="locality">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Example would be city name</rdfs:comment>
+    <rdfs:domain rdf:resource="#Address"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Locality</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="creationDateText">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >creation date as it appears in the cataloguing notes</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creation date text</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="numberOnSheet">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Should not be confused with the series number</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ordinal number of the ballad</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="seriesName">
+    <rdfs:domain rdf:resource="#SeriesElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Series name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lastLineRefrain">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Last line of the refrain</rdfs:comment>
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Last line of the refrain</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="seriesNumber">
+    <rdfs:domain rdf:resource="#SeriesElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Series number</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="occurredDuringYear">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during a specified year</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during year</rdfs:label>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="sheetManifestationTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title of sheet, if given (as distinct from title of Ballad)</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sheet manifestation title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="musicalScoreText">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text contained in the musical score</rdfs:comment>
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Musical score text</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="agentName">
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Name of agent</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="occurredDuringOrAfterYear">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during or after year</rdfs:label>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during or after a specified year</rdfs:comment>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="collectionName">
+    <rdfs:domain rdf:resource="#Collection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Name of collection</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="shelfMark">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A local identifier for sheet item</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Shelfmark</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="firstLineRefrain">
+    <rdfs:domain rdf:resource="#TextBodyElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >First line of refrain</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="performanceTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title of a performance</rdfs:comment>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="printingProcess">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Printing process e.g. letterpress, lithography, intaglio, mixed</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Printing process</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="streetAddress">
+    <rdfs:domain rdf:resource="#Address"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Street address</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2006/vcard/ns#street-address"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="date">
+    <rdfs:domain rdf:resource="#DateElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Date</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="annotationType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >type of annotation e.g. marginalia, cataloguer's notes</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Type of annotation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="numberBalladsOnSheet">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recording the number of ballads that exist on the sheet manifestation</rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Number of ballads on sheet</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="theme">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Theme contained within the Ballad</rdfs:comment>
+    <rdfs:domain rdf:resource="#BalladTextManifestation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Theme</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="occurredDuringOrBeforeYear">
+    <rdfs:domain rdf:resource="#SheetManifestationCreationEvent"/>
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:domain rdf:resource="#SheetItemPrintingEvent"/>
+    <rdfs:domain rdf:resource="#PerformanceEvent"/>
+    <rdfs:domain rdf:resource="#CollectionCreationEvent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during or before year</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:domain rdf:resource="#PartOfCollectionEvent"/>
+    <rdfs:domain rdf:resource="#CollectionDispersalEvent"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Occurred during or before a specified year</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="musicalScore">
+    <rdfs:domain rdf:resource="#MusicalScoreElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Musical score</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="licenseStatement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >License statement as printed on sheet item</rdfs:comment>
+    <rdfs:domain rdf:resource="#LicenseStatementElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >License statement</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="entranceText">
+    <rdfs:domain rdf:resource="#EntranceStationersRegister"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Entrance text</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="support">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:domain rdf:resource="#SheetItemFacsimile"/>
+    <rdfs:domain rdf:resource="#SheetItem"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Support</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->
